@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar  class="toolbar-background">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tips
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-card *ngFor="let tip of tipList | async" (click)="loadDetailedTip(tip)" >
+    <div class="loading"  *ngIf= "tip.bookmarked" >
+      <div class="progress-bar">
+        <div class="progress-bar-progress"></div>
+       
+      </div>
+    </div>
+    <ion-card-header>
+      <ion-card-title>
+        <div class="ion-justify-content-between	" style="display: flex;">{{tip.title}}
+          <ion-buttons end (click)="addBookmark($event, tip)">
+            <button ion-button icon-left clear>
+              <ion-icon  [src]=" tip.bookmarked ? 'assets/icon/bookmark.svg' : 'assets/icon/bookmark-outline.svg'" ></ion-icon>
+            </button>
+          </ion-buttons>
+      </div></ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+       {{tip.desc}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

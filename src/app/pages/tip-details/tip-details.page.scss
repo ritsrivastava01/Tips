@@ -1,0 +1,64 @@
+
+    :host{
+
+.toolbar-background{
+    --background:var(--toolbar-background)
+}
+
+ion-toolbar{
+    ion-title{
+        color: var(--titleColor);
+    }
+    ion-buttonsbutton{
+        width: 35px;
+      }
+}
+
+    .increaseFont {
+      font-size: 1.8rem;
+    }
+    
+    .contributer {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #928e8e;
+      margin-bottom: 10px;
+      margin-left: -16px;
+      padding-left: 16px;
+      margin-right: -16px;
+      background-color: #e8e8e8;
+      margin-top: -16px;
+      position: absolute;
+      width: 100%;
+      font-size: 1.4rem;
+      ion-icon {
+        color: var(--toolbar-background);
+      }
+      p {
+        padding-left: 15px;
+        color: var(--toolbar-background);
+  
+      }
+    }
+  
+    ion-content{
+      .content {
+        padding-top: 40px;
+      }
+      .display-none{
+        display: none;
+      }
+      .not-found{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+  
+        span{
+          font-size: 4rem;
+        }
+      }
+    }
+  
+}

@@ -3,6 +3,26 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --toolbar-background: #ff9800;
+--searchbar-md-input-background-color: rgba(179, 108, 3, 0.61);
+--searchbar-md-input-text-color:#ffffff;
+--searchbar-md-input-clear-icon-color: #ffffff;
+--searchbar-md-input-box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.66);
+--searchbar-md-input-border-radius:20px;
+--searchbar-md-padding-end:25px;
+--searchbar-md-input-search-icon-color:#aeaeae;
+--searchbar-md-input-clear-icon-color: #ffffff;
+--font-family-base: sans-serif !default;
+--titleColor:#051039;
+--contentBackgroundColor:rgba(227, 114, 34, 0.05) !important;
+--loading-md-background: none;
+--loading-md-box-shadow-color: none;
+--loading-md-box-shadow: none;
+--loading-md-spinner-crescent-color:--toolbar-background;
+--toggle-md-handle-background-color-on: #ff9800;
+--toggle-md-active-color:#ff9800;
+--ion-background-color:#ffffff;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

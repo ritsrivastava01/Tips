@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Contrast 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Language" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="KL---Language-without-flags" transform="translate(-1089.000000, -16.000000)">
+            <g id="Accessibility" transform="translate(1089.000000, 16.000000)">
+                <g id="Contrast-3">
+                    <circle id="Oval" fill="#040404" cx="16" cy="16" r="16"></circle>
+                    <path d="M16,3 C8.82029825,3 3,8.82029825 3,16 C3,23.1797017 8.82029825,29 16,29 L16,29" id="Oval" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

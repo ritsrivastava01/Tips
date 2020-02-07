@@ -1,0 +1,135 @@
+.toolbar-background{
+  --background:var(--toolbar-background)
+}
+
+ion-toolbar{
+  ion-title{
+      color: var(--titleColor);
+  }
+
+}
+.loading {
+  display: flex;
+  
+  position: absolute;
+  width: 100%;
+  background-size: 100%;
+}
+@-webkit-keyframes progress-end {}
+.progress-bar {
+  -webkit-animation: progress-end 500ms 3500ms;
+  -webkit-animation-fill-mode: forwards;
+  margin: auto;
+  height: 6px;
+  width: 100%;
+  margin-left: -.1px;
+}
+@-webkit-keyframes progress {
+  100% {
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+.progress-bar-progress {
+  -webkit-animation: progress 1s;
+  -webkit-animation-fill-mode: forwards;
+  background-color: var(--toolbar-background);
+  height: 100%;
+  -moz-transform-origin: 0 0 0 50%;
+  -ms-transform-origin: 0 0 0 50%;
+  -webkit-transform-origin: 0 0 0 50%;
+  transform-origin: 0 0 0 50%;
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+
+
+}
+html,
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+ion-content {
+  --ion-background-color: var(--contentBackgroundColor);
+  .scroll-content{
+    padding: 0px !important
+  }
+}
+ion-card {
+  background-color: #FFF;
+  .card-header-md {
+    padding: 9px;
+    .toolbar-title-md{
+      padding: 0px;
+    }
+    .row{
+      ion-col:first-child{
+        padding: 0px;
+        display: flex;
+        ion-title{
+          max-width: 93%;
+        }
+      }
+    }
+  }
+
+  ion-buttons{
+    margin-top: -25px;
+    margin-left: 0PX;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: var(--toolbar-background);
+    button {
+      background-color: transparent;
+      outline: none;
+    }
+
+    ion-icon {
+      stroke: blue;
+      font-size: 2em !important;
+       svg path{
+        stroke: red;
+      }
+    }
+  }
+  ion-card-content div {
+    max-height: 65px;
+    overflow: hidden;
+  }
+  .card-content-md{
+    padding: 13px 8px;
+  }
+}
+.chat-item.ng-enter {
+  background-color: red;
+  -webkit-animation: fadeInLeft 1s;
+  animation: fadeInLeft 1s;
+}
+.ion-cardSelected {
+  .button-clear-md {
+    margin-top: -20px;
+  }
+}
+.no-data-found{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width: 40%;
+  }
+  span{
+    font-size: 30px;
+    color: #051039
+  }
+}

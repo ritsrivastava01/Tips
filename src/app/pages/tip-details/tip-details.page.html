@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="toolbar-background">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tip Detail</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" icon-only (click)="share()">
+        <ion-icon name="md-share"></ion-icon>
+      </ion-button>
+      <ion-button ion-button icon-only *ngIf="!bigFont" (click)="changeFont()">
+        <ion-icon src="assets/icon/bigFont.svg"> </ion-icon>
+      </ion-button>
+      <ion-button ion-button icon-only *ngIf="  bigFont" (click)="changeFont()">
+        <ion-icon src="assets/icon/smallFont.svg"> </ion-icon>
+      </ion-button>
+      <ion-button
+        ion-button
+        icon-only
+        *ngIf="lightTheme"
+        (click)="changeTheme()"
+      >
+        <ion-icon src="assets/icon/light.svg"> </ion-icon>
+      </ion-button>
+      <ion-button
+        ion-button
+        icon-only
+        *ngIf="!lightTheme"
+        (click)="changeTheme()"
+      >
+        <ion-icon src="assets/icon/dark.svg"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" #tipContent >
+  <div class="contributor" (click)="loadContributorPage()" *ngIf="detailsFound" #contributor >
+    <ion-icon name="person"></ion-icon>
+    <p>{{selectedTip?.name}}</p>
+  </div>
+
+  <div [innerHTML] ='tipData' #content class="content display-none" *ngIf="detailsFound"></div>
+
+  <div *ngIf="!detailsFound" class="not-found">
+    <span>Tip not found</span>
+  </div>
+</ion-content>
