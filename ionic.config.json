@@ -1,7 +1,8 @@
 {
   "name": "Tips",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

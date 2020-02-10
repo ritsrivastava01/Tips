@@ -1,11 +1,30 @@
 <ion-header>
   <ion-toolbar class="toolbar-background">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button (click)="goBack()"></ion-back-button>
     </ion-buttons>
     <ion-title>Tip Detail</ion-title>
 
     <ion-buttons slot="end">
+      <ion-button
+        fill="clear"
+        icon-only
+        ion-button
+        icon-left
+        clear
+        (click)="manageBookmark($event)"
+      >
+        <!-- <ion-icon  [src]=" clickedTip?.bookmarked ? 'assets/icon/bookmark.svg' : 'assets/icon/bookmark-outline.svg'" ></ion-icon>
+           -->
+
+        <i *ngIf="!clickedTip?.bookmarked" class="material-icons">
+          bookmark_border
+        </i>
+        <i *ngIf="clickedTip?.bookmarked" class="material-icons">
+          bookmark
+        </i>
+      </ion-button>
+
       <ion-button fill="clear" icon-only (click)="share()">
         <ion-icon name="md-share"></ion-icon>
       </ion-button>
@@ -35,13 +54,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" #tipContent >
-  <div class="contributor" (click)="loadContributorPage()" *ngIf="detailsFound" #contributor >
+<ion-content class="ion-padding" #tipContent>
+  <div class="contributor" *ngIf="detailsFound" #contributor>
     <ion-icon name="person"></ion-icon>
-    <p>{{selectedTip?.name}}</p>
+    <p>{{clickedTip?.name}}</p>
   </div>
 
-  <div [innerHTML] ='tipData' #content class="content display-none" *ngIf="detailsFound"></div>
+  <div
+    [innerHTML]="tipData"
+    #content
+    class="content display-none"
+    *ngIf="detailsFound"
+  ></div>
 
   <div *ngIf="!detailsFound" class="not-found">
     <span>Tip not found</span>

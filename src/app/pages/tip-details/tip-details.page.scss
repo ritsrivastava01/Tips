@@ -5,6 +5,12 @@
     --background:var(--toolbar-background)
 }
 
+.increaseFont {
+  font-size: 1.5rem;
+  h3{
+    font-size: 30px !important;
+  }
+}
 ion-toolbar{
     ion-title{
         color: var(--titleColor);
@@ -14,11 +20,8 @@ ion-toolbar{
       }
 }
 
-    .increaseFont {
-      font-size: 1.8rem;
-    }
     
-    .contributer {
+    .contributor {
       display: flex;
       align-items: center;
       border-bottom: 1px solid #928e8e;
@@ -28,9 +31,8 @@ ion-toolbar{
       margin-right: -16px;
       background-color: #e8e8e8;
       margin-top: -16px;
-      position: absolute;
+      position: fixed;
       width: 100%;
-      font-size: 1.4rem;
       ion-icon {
         color: var(--toolbar-background);
       }

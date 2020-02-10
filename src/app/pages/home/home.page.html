@@ -1,39 +1,58 @@
 <ion-header>
-  <ion-toolbar  class="toolbar-background">
+  <ion-toolbar class="toolbar-background">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title *ngIf="!showSearch">
       Tips
     </ion-title>
+    <ion-searchbar
+      *ngIf="showSearch"
+      animated="true"
+      debounce="500"
+      [(ngModel)]="someValue"
+      (ionInput)="searchList($event)"
+      (ionCancel)="showSearch=!showSearch"
+      showCancelButton="true"
+      placeholder="Search Tips"
+    >
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" icon-only (click)="showSearch=!showSearch">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- 
-  <ion-card *ngFor="let tip of tipList | async" (click)="loadDetailedTip(tip)" >
-    <div class="loading"  *ngIf= "tip.bookmarked" >
+  <ion-card *ngFor="let tip of tipList | async" (click)="loadDetailedTip(tip)">
+    <div class="loading" *ngIf="tip.bookmarked">
       <div class="progress-bar">
         <div class="progress-bar-progress"></div>
-       
       </div>
     </div>
     <ion-card-header>
       <ion-card-title>
-        <div class="ion-justify-content-between	" style="display: flex;">{{tip.title}}
+        <div
+          class="ion-justify-content-between ion-text-nowrap"
+          style="display: flex;"
+        >
+          <span>{{tip.title}}</span>
+
           <ion-buttons end (click)="addBookmark($event, tip)">
             <button ion-button icon-left clear>
-              <ion-icon  [src]=" tip.bookmarked ? 'assets/icon/bookmark.svg' : 'assets/icon/bookmark-outline.svg'" ></ion-icon>
+              <ion-icon
+                [src]=" tip.bookmarked ? 'assets/icon/bookmark.svg' : 'assets/icon/bookmark-outline.svg'"
+              ></ion-icon>
             </button>
-          </ion-buttons>
-      </div></ion-card-title>
-      
+          </ion-buttons></div
+      ></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>
-       {{tip.desc}}
+        {{tip.desc}}
       </p>
     </ion-card-content>
   </ion-card>
-  
 </ion-content>

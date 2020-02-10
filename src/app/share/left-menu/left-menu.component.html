@@ -1,19 +1,47 @@
 <ion-menu contentId="main-content" type="overlay">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Tips</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="app-logo">
+    <ion-avatar>
+      <img src="assets/icon/idea.svg" />
+    </ion-avatar>
+
+    <div class="ion-text-end">
+      <ion-note slot="end">App Version 1.0.0</ion-note>
+    </div>
+  </div>
   <ion-content>
     <ion-list>
-      <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+      <ion-menu-toggle
+        auto-hide="false"
+        *ngFor="let p of appPages"
+        (click)="navigatePage(p)"
+      >
+        <ion-item>
           <ion-icon slot="start" [name]="p.icon"></ion-icon>
           <ion-label>
-            {{p.title}}
+            {{ p.title }}
           </ion-label>
+          <ion-badge *ngIf="p.id == 2" color="danger" slot="end">{{
+            bookmarkedTipList
+          }}</ion-badge>
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
   </ion-content>
+  <ion-footer>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of OtherOptions">
+        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-label>
+            {{ p.title }}
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+    <!-- <ion-col>
+      <div class="ion-text-end">
+        <span class="ion-text-end"> &copy; Ritesh Srivastava</span>
+      </div>
+    </ion-col> -->
+  </ion-footer>
 </ion-menu>
