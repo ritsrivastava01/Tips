@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { ChangeDetectionStrategy } from '@angular/compiler/src/compiler_facade_interface';
 
 @Component({
-  selector: 'app-about-us',
-  templateUrl: './about-us.page.html',
-  styleUrls: ['./about-us.page.scss']
+  selector: 'app-contribute',
+  templateUrl: './contribute.page.html',
+  styleUrls: ['./contribute.page.scss']
 })
-export class AboutUsPage {
+export class ContributePage {
   currentPage: Page;
   constructor(
     private navigationService: NavigationService,

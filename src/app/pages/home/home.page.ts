@@ -65,10 +65,8 @@ export class HomePage {
     const toast = await this.toastController.create({
       message: message,
       duration: 2000,
-      animated: true,
-      position: 'bottom',
       color: 'dark',
-      showCloseButton: true
+      keyboardClose:true
     });
     toast.present();
   }

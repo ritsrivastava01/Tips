@@ -32,7 +32,7 @@ export class LeftMenuComponent {
     //   this.appVersion.getVersionNumber()
     // );
     this.bookmarkedService.bookmarkedTipList.subscribe(x => {
-      this.bookmarkedTipList = x.filter(y => y != null).length;
+      this.bookmarkedTipList = x && x.filter(y => y != null).length;
     });
   }
 

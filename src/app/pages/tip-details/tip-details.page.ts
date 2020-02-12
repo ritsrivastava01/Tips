@@ -140,8 +140,7 @@ export class TipDetailsPage implements OnInit {
       duration: 2000,
       animated: true,
       position: 'bottom',
-      color: 'dark',
-      showCloseButton: true
+      color: 'dark'
     });
     toast.present();
   }

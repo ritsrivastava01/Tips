@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
+
+import { ContributePageRoutingModule } from './contribute-routing.module';
+
+import { ContributePage } from './contribute.page';
 import { ShareModule } from 'src/app/share/share.module';
 
 @NgModule({
@@ -13,13 +15,8 @@ import { ShareModule } from 'src/app/share/share.module';
     FormsModule,
     IonicModule,
     ShareModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
+    ContributePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [ContributePage]
 })
-export class HomePageModule {}
+export class ContributePageModule {}

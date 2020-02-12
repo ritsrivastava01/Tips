@@ -26,7 +26,7 @@ export const LEFT_NAVIGATION: Page[] = [
 
   {
     title: 'Contribute',
-    url: '/about-us',
+    url: '/contribute',
     icon: 'create',
     id: 4
   }

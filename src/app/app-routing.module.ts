@@ -10,20 +10,27 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('../../pages/home/home.module').then(m => m.HomePageModule)
+      import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'tip-details',
     loadChildren: () =>
-      import('../../pages/tip-details/tip-details.module').then(
+      import('./pages/tip-details/tip-details.module').then(
         m => m.TipDetailsPageModule
       )
   },
   {
     path: 'about-us',
     loadChildren: () =>
-      import('../../pages/about-us/about-us.module').then(
+      import('./pages/about-us/about-us.module').then(
         m => m.AboutUsPageModule
+      )
+  },
+  {
+    path: 'contribute',
+    loadChildren: () =>
+      import('./pages/contribute/contribute.module').then(
+        m => m.ContributePageModule
       )
   }
 ];
@@ -36,4 +43,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class LeftMenuRoutingModule {}
+export class AppRoutingModule {}

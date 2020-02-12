@@ -30,7 +30,8 @@
   <ion-footer>
     <ion-list>
       <ion-menu-toggle auto-hide="false" *ngFor="let p of OtherOptions">
-        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+        <!-- <ion-item [routerDirection]="'root'" [routerLink]="[p.url]"> -->
+          <ion-item>
           <ion-icon slot="start" [name]="p.icon"></ion-icon>
           <ion-label>
             {{ p.title }}
