@@ -31,3 +31,23 @@
   list-style: inside !important;
   color: white !important;
 }
+
+ion-loading.transparent {
+  .loading-wrapper {
+    background: transparent;
+    box-shadow: none;
+    
+     
+    .spinner-crescent {
+      color:var(--toolbar-background);
+    
+
+      svg {
+        width: 28px;
+        height: 28px;
+        stroke: #444;
+        fill: #222;
+      }
+    }
+  }
+}

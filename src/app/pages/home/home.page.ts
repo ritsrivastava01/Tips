@@ -11,6 +11,7 @@ import { NavController, ToastController } from '@ionic/angular';
 import { ManageBookmarkService } from 'src/app/services/manage-bookmark.service';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Page, LEFT_NAVIGATION } from 'src/model/page.interface';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +29,8 @@ export class HomePage {
     private bookmarkedService: ManageBookmarkService,
     private route: ActivatedRoute,
     private navigationService: NavigationService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private spinnerService:SpinnerService
   ) {
     //TEMP
     //this.bookmarkedService.clearBookmarkedTips();
@@ -37,6 +39,7 @@ export class HomePage {
 
     this.navigationService.navigatePage.subscribe((page: Page) => {
       this.currentPage = page;
+      this.spinnerService.showSpinner();
       this.getTipList(this.currentPage.id == 2);
     });
   }
@@ -59,6 +62,7 @@ export class HomePage {
       this.localTipList = tipArr;
       this.tipList = of(tipArr);
     });
+    this.spinnerService.showSpinner();
   };
 
   async presentToast(message) {

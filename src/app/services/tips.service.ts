@@ -29,4 +29,9 @@ export class TipsService {
   public getTipDetailsFileName(tipFileName): string {
     return `https://raw.githubusercontent.com/ritsrivastava01/TS_TIPS/master/tips/${tipFileName}.md`;
   }
+
+  public getDetails(pageName:string):Observable<any>{
+    return this.http.get(`https://raw.githubusercontent.com/ritsrivastava01/TS_TIPS/master/${pageName}.md`,  { responseType: 'text' });
+  
+ }
 }
