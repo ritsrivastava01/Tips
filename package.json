@@ -28,7 +28,7 @@
     "cordova-browser": "^6.0.0",
     "cordova-plugin-app-version": "^0.1.9",
     "core-js": "^2.5.4",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "marked": "^0.8.0",
     "material-design-icons": "^3.0.1",
     "rxjs": "~6.5.1",
