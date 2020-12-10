@@ -3,6 +3,7 @@ export interface Page {
   url: string;
   icon: string;
   id: number;
+  clickFunction?: string;
 }
 export const LEFT_NAVIGATION: Page[] = [
   {
@@ -38,11 +39,13 @@ export const OTHER_NAVIGATION: Page[] = [
     url: "",
     icon: "share-social",
     id: 5,
+    clickFunction: "shareApp",
   },
   {
     title: "Rate this app",
     url: "/home",
     icon: "star",
     id: 5,
+    clickFunction: "rateApp",
   },
 ];

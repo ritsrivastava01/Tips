@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouteReuseStrategy } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
-import { AppComponent } from './app.component';
-import { ShareModule } from './share/share.module';
-import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from "./app.component";
+import { ShareModule } from "./share/share.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { SocialSharing } from "@ionic-native/social-sharing/ngx";
+import { AppRate } from "@ionic-native/app-rate/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,13 +20,15 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule,
     IonicModule.forRoot(),
-    ShareModule
+    ShareModule,
   ],
   providers: [
     StatusBar,
+    SocialSharing,
+    AppRate,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

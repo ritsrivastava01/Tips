@@ -14,13 +14,22 @@
         clear
         (click)="manageBookmark($event)"
       >
-        <i *ngIf="!clickedTip?.bookmarked" class="material-icons">
+        <i
+          *ngIf="!clickedTip?.bookmarked"
+          class="material-icons"
+          [ngStyle]="{'color': '#FFF'}"
+        >
           bookmark_border
         </i>
         <i *ngIf="clickedTip?.bookmarked" class="material-icons"> bookmark </i>
       </ion-button>
 
-      <ion-button fill="clear" icon-only (click)="share()">
+      <ion-button
+        fill="clear"
+        icon-only
+        (click)="share()"
+        [ngStyle]="{'color': '#FFF'}"
+      >
         <ion-icon name="share-social"></ion-icon>
       </ion-button>
       <ion-button ion-button icon-only *ngIf="!bigFont" (click)="changeFont()">

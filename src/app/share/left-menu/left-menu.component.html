@@ -27,7 +27,11 @@
   </ion-content>
   <ion-footer>
     <ion-list>
-      <ion-menu-toggle auto-hide="false" *ngFor="let p of OtherOptions">
+      <ion-menu-toggle
+        auto-hide="false"
+        *ngFor="let p of OtherOptions"
+        (click)="runLink(p.clickFunction)"
+      >
         <ion-item>
           <ion-icon class="icon-color" slot="start" [name]="p.icon"></ion-icon>
           <ion-label>
