@@ -1,22 +1,24 @@
 .app-logo {
-  height: 170px;
+  height: 250px;
   background-color: var(--toolbar-background) !important;
   display: flex;
   flex-direction: column;
-
-  ion-avatar {
-    text-align: -webkit-center;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    img {
-      height: 70%;
-      width: 26%;
-    }
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 70%;
   }
-  .ion-text-end {
-    padding-right: 10px;
+
+  // .ion-text-end {
+  //   padding-right: 10px;
+  // }
+}
+.icon-color {
+  color: var(--searchbar-md-input-background-color) !important;
+}
+ion-footer div {
+  padding-bottom: 6px;
+  ion-note {
+    font-size: 8px;
   }
 }

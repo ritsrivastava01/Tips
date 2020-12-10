@@ -1,41 +1,40 @@
-import { Injectable } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { Injectable } from "@angular/core";
+import { LoadingController } from "@ionic/angular";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SpinnerService {
   private _spinner;
 
   constructor(private loadingCtrl: LoadingController) {
-
-   //this.createSpinner();
-
-   }
-   createSpinner(){
-     this.loadingCtrl.create({
-      showBackdrop: true,
-      cssClass: 'transparent',
-      
-    }).then((res)=>{
-      this._spinner = res;
-      this._spinner.present();
-    })
-   }
-
-  public showSpinner() {
-    this.createSpinner();
-    // this._spinner = this.loadingCtrl.create({
-    //   showBackdrop: true
-    // }).then((res)=> {
-    //   this._spinner = res;
-    //   res.present();
-    // });
-
+    //this.createSpinner();
   }
 
-  public hideSpinner() {
+  private createSpinner = (): Promise<boolean> => {
+    return new Promise((response, rej) => {
+      this.loadingCtrl
+        .create({
+          showBackdrop: true,
+          cssClass: "transparent",
+        })
+        .then((res) => {
+          this._spinner = res;
+          this._spinner.present();
+          return response(true);
+        });
+    });
+  };
+
+  public showSpinner = (): Promise<boolean> => {
+    return new Promise((res, rej) => {
+      this.createSpinner().then(() => {
+        return res(true);
+      });
+    });
+  };
+
+  public hideSpinner = (): void => {
     this._spinner && this._spinner.dismiss();
-  }
-
+  };
 }

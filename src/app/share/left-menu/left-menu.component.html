@@ -1,12 +1,10 @@
 <ion-menu contentId="main-content" type="overlay">
   <div class="app-logo">
-    <ion-avatar>
-      <img src="assets/icon/idea.svg" />
-    </ion-avatar>
+    <img src="assets/icon/idea.svg" />
 
-    <div class="ion-text-end">
+    <!-- <div class="ion-text-end">
       <ion-note slot="end">App Version 1.0.0</ion-note>
-    </div>
+    </div> -->
   </div>
   <ion-content>
     <ion-list>
@@ -16,7 +14,7 @@
         (click)="navigatePage(p)"
       >
         <ion-item>
-          <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-icon class="icon-color" slot="start" [name]="p.icon"></ion-icon>
           <ion-label>
             {{ p.title }}
           </ion-label>
@@ -30,19 +28,20 @@
   <ion-footer>
     <ion-list>
       <ion-menu-toggle auto-hide="false" *ngFor="let p of OtherOptions">
-        <!-- <ion-item [routerDirection]="'root'" [routerLink]="[p.url]"> -->
-          <ion-item>
-          <ion-icon slot="start" [name]="p.icon"></ion-icon>
+        <ion-item>
+          <ion-icon class="icon-color" slot="start" [name]="p.icon"></ion-icon>
           <ion-label>
             {{ p.title }}
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
-    <!-- <ion-col>
-      <div class="ion-text-end">
+
+    <div class="ion-text-end ion-padding-horizontal ion-padding-bottom">
+      <ion-note>&copy; Ritesh Srivastava</ion-note>
+    </div>
+    <!-- 
         <span class="ion-text-end"> &copy; Ritesh Srivastava</span>
-      </div>
-    </ion-col> -->
+      </div> -->
   </ion-footer>
 </ion-menu>

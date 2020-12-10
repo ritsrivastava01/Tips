@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button (click)="goBack()"></ion-back-button>
     </ion-buttons>
-    <ion-title>Tip Detail</ion-title>
+    <ion-title>Tip Details</ion-title>
 
     <ion-buttons slot="end">
       <ion-button
@@ -14,19 +14,14 @@
         clear
         (click)="manageBookmark($event)"
       >
-        <!-- <ion-icon  [src]=" clickedTip?.bookmarked ? 'assets/icon/bookmark.svg' : 'assets/icon/bookmark-outline.svg'" ></ion-icon>
-           -->
-
         <i *ngIf="!clickedTip?.bookmarked" class="material-icons">
           bookmark_border
         </i>
-        <i *ngIf="clickedTip?.bookmarked" class="material-icons">
-          bookmark
-        </i>
+        <i *ngIf="clickedTip?.bookmarked" class="material-icons"> bookmark </i>
       </ion-button>
 
       <ion-button fill="clear" icon-only (click)="share()">
-        <ion-icon name="md-share"></ion-icon>
+        <ion-icon name="share-social"></ion-icon>
       </ion-button>
       <ion-button ion-button icon-only *ngIf="!bigFont" (click)="changeFont()">
         <ion-icon src="assets/icon/bigFont.svg"> </ion-icon>

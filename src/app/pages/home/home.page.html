@@ -1,11 +1,8 @@
-
 <app-header>
   <ion-buttons slot="start">
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
-  <ion-title *ngIf="!showSearch">
-    Tips
-  </ion-title>
+  <ion-title *ngIf="!showSearch"> Tips </ion-title>
   <ion-searchbar
     *ngIf="showSearch"
     animated="true"
@@ -24,7 +21,11 @@
   </ion-buttons>
 </app-header>
 <ion-content>
-  <ion-card *ngFor="let tip of tipList | async" (click)="loadDetailedTip(tip)">
+  <ion-card
+    *ngFor="let tip of tipList | async"
+    (click)="loadDetailedTip(tip)"
+    [ngClass]="{'bookmarked-card': tip.bookmarked}"
+  >
     <div class="loading" *ngIf="tip.bookmarked">
       <div class="progress-bar">
         <div class="progress-bar-progress"></div>
@@ -34,7 +35,7 @@
       <ion-card-title>
         <div
           class="ion-justify-content-between ion-text-nowrap"
-          style="display: flex;"
+          style="display: flex"
         >
           <span>{{tip.title}}</span>
 
@@ -48,9 +49,7 @@
       ></ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>
-        {{tip.desc}}
-      </p>
+      <p>{{tip.desc}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

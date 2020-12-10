@@ -1,4 +1,3 @@
-
 .loading {
   display: flex;
 
@@ -89,6 +88,9 @@ ion-card {
   .card-content-md {
     padding: 13px 8px;
   }
+}
+.bookmarked-card {
+  background-color: #ff980017;
 }
 .chat-item.ng-enter {
   background-color: red;
