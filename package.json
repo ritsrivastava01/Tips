@@ -33,7 +33,7 @@
     "cordova-plugin-x-socialsharing": "^6.0.2",
     "core-js": "^2.5.4",
     "highlight.js": "^9.18.1",
-    "marked": "^0.8.0",
+    "marked": "^4.0.10",
     "material-design-icons": "^3.0.1",
     "rxjs": "~6.5.1",
     "serialize-javascript": "^2.1.2",
